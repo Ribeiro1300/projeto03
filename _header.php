@@ -28,16 +28,16 @@ if ($T['pageCSS'] != '') echo "\t<link rel=\"stylesheet\" href=\"{$T['pageCSS']}
 
         <!-- Cabeçalho -->
         <header>
-            <a href="/"><img src="img/logo02.png" alt="Intranet"></a>
+            <a href="#"><img src="img/logo02.png" alt="Intranet"></a>
             <h1><?php echo $T['siteName'] ?><small><?php echo $T['siteSlogan'] ?></small></h1>
         </header>
 
         <!-- Menu principal -->
         <nav>
-            <a href="/"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
-            <a href="/"><i class="fas fa-fw fa-newspaper"></i> <span>Notícias</span></a>
-            <a href="/"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
-            <a href="/"><i class="fas fa-fw fa-info-circle"></i> <span>Sobre</span></a>
+            <a href="#"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
+            <a href="#"><i class="fas fa-fw fa-newspaper"></i> <span>Estoque</span></a>
+            <a href="#"><i class="fas fa-fw fa-info-circle"></i> <span>Protocolos</span></a>
+            <a href="#"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
         </nav>
 
         <!-- Corpo da página -->

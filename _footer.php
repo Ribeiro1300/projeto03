@@ -35,7 +35,6 @@ endforeach;
     </div>
         <div>
             <a href="/"><i class="fas fa-fw fa-file-code"></i> <span>Sobre o site</span></a>
-            <a href="/"><i class="fas fa-fw fa-user-tie"></i> <span>Sobre o autor</span></a>
             <a href="/"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
             <a href="/"><i class="fas fa-fw fa-lock"></i> <span>Privacidade</span></a>
         </div>
