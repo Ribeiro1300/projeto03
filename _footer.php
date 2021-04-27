@@ -4,8 +4,8 @@
 <footer>
 
     <div class="license">
-        <a href="/"><i class="fas fa-fw fa-home"></i></a>
-        <div>&copy; Copyright 2021 André Luferat</div>
+        <a href="#"><i class="fas fa-fw fa-home"></i></a>
+        <div>&copy; Copyright 2021 Jhonatan Ribeiro</div>
         <a href="#top"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
     </div>
 

@@ -3,6 +3,37 @@
 // Configurações globais
 require_once ('_config.php');
 
+/***** Lista de artigos *****/
+
+// Obtendo do database
+$sql = "
+SELECT art_id, art_image, art_title, art_text 
+FROM articles
+WHERE art_status = 'ativo' AND art_date <= NOW()
+ORDER BY art_date DESC;
+";
+$res = $conn->query($sql); //mysqliquery($conn, $sql)
+
+// Prepara a 'view' dos artigos
+$articles = '';
+
+// Obtém uma linha por vez
+while($art = $res->fetch_assoc()):
+
+    $articles .= <<<HTML
+    <div class="article" data-link="/view.php?{$art['art_id']}">
+        <img src="{$art['art_image']}" alt="{$art['art_title']}">
+        <div>
+            <h4>{$art['art_title']}</h4>
+            <small></small>
+        </div>
+    </div>
+
+HTML;
+
+    
+endwhile;
+
 
 
 
@@ -10,13 +41,13 @@ require_once ('_config.php');
 /***** Configurações da página *****/
 
 // Título da página
-$T['pageTitle'] = 'Página Modelo';
+$T['pageTitle'] = 'LMG';
 
 // CSS da página
-$T['pageCSS'] = '/css/template.css';
+$T['pageCSS'] = '/css/index.css';
 
 // JavaScript da página
-$T['pageJS'] = '/js/template.js';
+$T['pageJS'] = '/js/index.js';
 
 // Cabeçalho da página
 require_once('_header.php');
@@ -25,6 +56,8 @@ require_once('_header.php');
 
             <!-- Conteúdo principal -->
             <article>
+
+            <?php echo $articles ?> 
 
                 <h2>Laboratório de Medicina Genômica</h2>
                 <h3>Sobre</h3>
