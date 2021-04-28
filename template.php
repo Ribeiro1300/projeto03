@@ -27,7 +27,7 @@ require_once('_header.php');
             <article>
 
                 <h2>Laboratório de Medicina Genômica</h2>
-                <h3>Sobre</h3>
+                <h3 id="id_sobre">Sobre</h3>
                 <h3>História</h3>
                 <h3>Projetos</h3>
                 <h3>Equipe</h3>
@@ -40,10 +40,10 @@ require_once('_header.php');
                 <h3>Links Úteis</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <ul>
-                    <li><a href="/">Link 1</a></li>
-                    <li><a href="/">Link 2</a></li>
-                    <li><a href="/">Link 3</a></li>
-                    <li><a href="/">Link 4</a></li>
+                    <li><a href="#">Lab 01</a></li>
+                    <li><a href="#">Lab 02</a></li>
+                    <li><a href="#">Lab 03</a></li>
+                    <li><a href="#">Lab 04</a></li>
                 </ul>
             </aside>
 

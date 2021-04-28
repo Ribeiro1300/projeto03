@@ -14,7 +14,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
     $server = 'localhost'; // Link de acesso
     $user = 'root';         // Usuário
     $password = '';         // Senha do usuário
-    $database = 'tilojo';   // Nome da base de dados
+    $database = 'protocolos';   // Nome da base de dados
 } else {
 
     // Provedor de hospedagem
@@ -49,10 +49,8 @@ $T = array (
     'pageCSS' => '',                    // CSS da página
     'pageJS' => '',                     // JavaScript da página
     'menuSocial' => array (             // Links para redes sociais
-        'facebook' => 'https://facebook.com/tilojo',
-        'youtube' => 'https://youtube.com/tilojo',
-        'github' => 'https://github.com/tilojo',
-        'linkedin' => 'https://linkedin.com/tilojo'
+        'facebook' => 'https://facebook.com/LMG',
+        'youtube' => 'https://youtube.com/LMG',
     )
 );
 

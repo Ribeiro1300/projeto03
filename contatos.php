@@ -27,10 +27,10 @@ require_once('_header.php');
             <article>
 
                 <h2>Laboratório de Medicina Genômica</h2>
-                <h3 id="id_sobre">Sobre</h3>
-                <h3>História</h3>
-                <h3>Projetos</h3>
-                <h3>Equipe</h3>
+                <h3>Contato do laboratório 01</h3>
+                <h3>Contato do laboratório 01</h3>
+                <h3>Contato do laboratório 01</h3>
+                <h3>Contato do laboratório 01</h3>
                 
 
             </article>
