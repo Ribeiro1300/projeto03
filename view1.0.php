@@ -6,7 +6,7 @@ require_once ('_config.php');
 /***** Configurações da página *****/
 
 // Título da página
-$T['pageTitle'] = 'Protocolos';
+$T['pageTitle'] = 'Artigo Modelo';
 
 // CSS da página
 $T['pageCSS'] = '/css/view.css';
@@ -31,23 +31,23 @@ if ($id == 0) {
 
 // Obtém o artigo do database
 $sql = "
-SELECT *, DATE_FORMAT(data_entrada, '%d de %M de %Y, às %H:%i') AS dateBr
-FROM `tb_itens` 
-INNER JOIN tb_pop ON itens_necessarios = id_itens
-WHERE id_pop = '{$id}'
+SELECT *, DATE_FORMAT(art_date, '%d de %M de %Y, às %H:%i') AS dateBr
+FROM `articles` 
+INNER JOIN authors ON art_author = aut_id
+WHERE art_id = '{$id}' AND art_date <= NOW() AND art_status = 'ativo'
 ";
 $res = $conn->query($sql);
 
-// Se não achou o protocolo, volta para a index
+// Se não achou o artigo, volta para a index
 if ($res->num_rows != 1) {
     header('Location: /index.php');
 }
 
 // Monta a view em HTML
-$prot = $res->fetch_assoc();
+$art = $res->fetch_assoc();
 
 // Título da página
-$T['pageTitle'] = $prot['pop_name'];
+$T['pageTitle'] = $art['art_title'];
 
 // Cabeçalho da página
 require_once('_header.php');
@@ -57,10 +57,10 @@ require_once('_header.php');
 <!-- Conteúdo principal -->
 <article>
 
-<h2><?php echo $prot['pop_name'] ?></h2>
-<small class="dateAuthor">Por <?php echo $prot['item_name'] ?> em <?php echo $prot['dateBr'] ?>.</small>
-<div><?php echo $prot['art_text'] ?></div>
-<p class="return-link"><a href="/protocolos.php">Lista de Protocolos</a></p>
+<h2><?php echo $art['art_title'] ?></h2>
+<small class="dateAuthor">Por <?php echo $art['aut_name'] ?> em <?php echo $art['dateBr'] ?>.</small>
+<div><?php echo $art['art_text'] ?></div>
+<p class="return-link"><a href="/index.php">Lista de artigos</a></p>
 
 </article>
 
@@ -68,12 +68,12 @@ require_once('_header.php');
 <aside>
     <h3>Sobre o Autor</h3>
     <div class="author">
-        <a href="<?php echo $prot['aut_link'] ?>" target="_blank">
-            <img src="<?php echo $prot['aut_image'] ?>" alt="<?php echo $prot['aut_name'] ?>">
+        <a href="<?php echo $art['aut_link'] ?>" target="_blank">
+            <img src="<?php echo $art['aut_image'] ?>" alt="<?php echo $art['aut_name'] ?>">
         </a>
         <h4>
-            <a href="<?php echo $prot['aut_link'] ?>" target="_blank">
-                <?php echo $prot['aut_name'] ?>
+            <a href="<?php echo $art['aut_link'] ?>" target="_blank">
+                <?php echo $art['aut_name'] ?>
             </a>
         </h4>
     </div>
