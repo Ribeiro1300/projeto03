@@ -12,7 +12,7 @@ $T['pageTitle'] = 'Protocolos';
 $T['pageCSS'] = '/css/view.css';
 
 // JavaScript da página
-$T['pageJS'] = '';
+$T['pageJS'] = '/js/view.js';
 
 
 /* Exibe o artigo completo */
@@ -52,28 +52,45 @@ $T['pageTitle'] = $prot['pop_name'];
 // Cabeçalho da página
 require_once('_header.php');
 
+    $itens = <<<HTML
+    <div class="item" data-link="/itens.php?{$prot['itens_necessarios']}">
+        <img src="{$prot['item_image']}" alt="{$prot['item_name']}">
+        <div>
+            <h4>{$prot['item_name']}</h4>
+            <small></small>
+        </div>
+    </div>
+
+HTML;
+
 ?>
 
 <!-- Conteúdo principal -->
 <article>
-
-<h2><?php echo $prot['pop_name'] ?></h2>
-<small class="dateAuthor">Por <?php echo $prot['item_name'] ?> em <?php echo $prot['dateBr'] ?>.</small>
-<div><?php echo $prot['art_text'] ?></div>
+<h2 style="text-transform: uppercase"><?php echo $prot['pop_name'] ?></h2>
+<small class="dateAuthor">Registrado em <?php echo $prot['dateBr'] ?>.</small>
+<br>
+<br>
+<div><?php echo $prot['metodologia'] ?></div>
 <p class="return-link"><a href="/protocolos.php">Lista de Protocolos</a></p>
 
+    <div>   
+        <h3>Item Necessários para o Procedimento</h3>
+        <?php echo $itens ?> 
+    </div>
 </article>
+    
 
 <!-- Barra lateral -->
 <aside>
-    <h3>Sobre o Autor</h3>
+    <h3>Sobre o Protocolo</h3>
     <div class="author">
-        <a href="<?php echo $prot['aut_link'] ?>" target="_blank">
-            <img src="<?php echo $prot['aut_image'] ?>" alt="<?php echo $prot['aut_name'] ?>">
+        <a href="<?php echo $prot['link_protocolo'] ?>" target="_blank">
+            <img src="<?php echo $prot['pop_image'] ?>" alt="<?php echo $prot['pop_name'] ?>">
         </a>
         <h4>
-            <a href="<?php echo $prot['aut_link'] ?>" target="_blank">
-                <?php echo $prot['aut_name'] ?>
+            <a href="<?php echo $prot['link_protocolo'] ?>" target="_blank">
+                <?php echo $prot['pop_name'] ?>
             </a>
         </h4>
     </div>

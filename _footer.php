@@ -34,7 +34,7 @@ endforeach;
 ?>
     </div>
         <div>
-            <a href="#id_sobre"><i class="fas fa-fw fa-file-code"></i> <span>Sobre o site</span></a>
+            <a href="index.php"><i class="fas fa-fw fa-file-code"></i> <span>Sobre o site</span></a>
             <a href="contatos.php"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
             <a href="#"><i class="fas fa-fw fa-lock"></i> <span>Privacidade</span></a>
         </div>

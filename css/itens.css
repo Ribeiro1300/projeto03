@@ -19,22 +19,3 @@
     width: auto;
     max-width: 100%;
 }
-.item {
-    text-align: center;
-    display: block;
-}
-
-.item img {
-    width: auto;
-    max-width: 60%;
-}
-
-.item h4 {
-    margin: 0;
-    margin-bottom: .5rem;
-}
-
-.item:hover {
-    background: rgba(0,0,0,.3);
-    cursor: pointer;
-}
