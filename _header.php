@@ -34,10 +34,9 @@ if ($T['pageCSS'] != '') echo "\t<link rel=\"stylesheet\" href=\"{$T['pageCSS']}
 
         <!-- Menu principal -->
         <nav>
-            <a href="#"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
-            <a href="#"><i class="fas fa-fw fa-newspaper"></i> <span>Estoque</span></a>
-            <a href="#"><i class="fas fa-fw fa-info-circle"></i> <span>Protocolos</span></a>
-            <a href="#"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
+            <a href="index.php"><i class="fas fa-fw fa-home"></i> <span>Início</span></a>
+            <a href="protocolos.php"><i class="fas fa-fw fa-newspaper"></i> <span>Protocolos</span></a>
+            <a href="contatos.php"><i class="fas fa-fw fa-comments"></i> <span>Contatos</span></a>
         </nav>
 
         <!-- Corpo da página -->

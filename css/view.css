@@ -1,0 +1,40 @@
+.date-author {
+    display: block;
+    text-align: right;
+    padding: .3rem .5rem;
+    background: rgb(218, 218, 218);
+    font-style: italic;
+}
+
+.return-link {
+    display: table;
+    margin: 2rem auto 1rem auto;
+}
+
+.author {
+    text-align: center;
+}
+
+.author img {
+    width: auto;
+    max-width: 100%;
+}
+.item {
+    text-align: center;
+    display: block;
+}
+
+.item img {
+    width: auto;
+    max-width: 60%;
+}
+
+.item h4 {
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.item:hover {
+    background: rgba(0,0,0,.3);
+    cursor: pointer;
+}

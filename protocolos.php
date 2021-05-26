@@ -3,6 +3,34 @@
 // Configurações globais
 require_once ('_config.php');
 
+/***** Lista de protocolos *****/
+
+// Obtendo do database
+$sql = "
+SELECT id_pop, pop_image, pop_name FROM tb_pop
+;
+";
+$res = $conn->query($sql); //mysqliquery($conn, $sql)
+
+// Prepara a 'view' dos protocolos
+$protocols = '';
+
+// Obtém uma linha por vez
+while($prot = $res->fetch_assoc()):
+
+    $protocols .= <<<HTML
+    <div class="article" data-link="/view.php?{$prot['id_pop']}">
+        <img src="{$prot['pop_image']}" alt="{$prot['pop_name']}">
+        <div>
+            <h4>{$prot['pop_name']}</h4>
+            <small></small>
+        </div>
+    </div>
+
+HTML;
+
+    
+endwhile;
 
 
 
@@ -10,13 +38,13 @@ require_once ('_config.php');
 /***** Configurações da página *****/
 
 // Título da página
-$T['pageTitle'] = 'Página Modelo';
+$T['pageTitle'] = 'Protocolos';
 
 // CSS da página
-$T['pageCSS'] = '/css/template.css';
+$T['pageCSS'] = '/css/protocolos.css';
 
 // JavaScript da página
-$T['pageJS'] = '/js/template.js';
+$T['pageJS'] = '/js/protocolos.js';
 
 // Cabeçalho da página
 require_once('_header.php');
@@ -26,12 +54,7 @@ require_once('_header.php');
             <!-- Conteúdo principal -->
             <article>
 
-                <h2>Laboratório de Medicina Genômica</h2>
-                <h3 id="id_sobre">Sobre</h3>
-                <h3>História</h3>
-                <h3>Projetos</h3>
-                <h3>Equipe</h3>
-                
+                <?php echo $protocols ?> 
 
             </article>
 
